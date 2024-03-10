@@ -31,7 +31,7 @@
     @endif
 
     @if ($this->areSettingsValid())
-        <a target="_blank" href="https://{{ data_get($team, 'slack_team_id') }}.slack.com/oauth/v2/authorize?scope=incoming-webhook&client_id={{ data_get($team, 'slack_client_id') }}&redirect_uri=https://localhost:8000/slack/redirect">
+        <a target="_blank" href="https://{{ data_get($team, 'slack_team_id') }}.slack.com/oauth/v2/authorize?scope=incoming-webhook&client_id={{ data_get($team, 'slack_client_id') }}&redirect_uri=https://localhost:8000/webhooks/notifications/slack/install?team_id={{ currentTeam()->id }}">
             <x-forms.button>Connect to workspace</x-forms.button>
         </a>
     @endif
